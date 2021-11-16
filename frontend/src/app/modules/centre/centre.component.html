@@ -1,0 +1,27 @@
+
+    <div class="mainDiv">
+      <div class="card text-center">
+        <header class="card-header" >
+            <h2 class="card-title">My Network</h2>
+        </header>
+    <div class="card-body text-center">
+          <div  class="btn-group mb-3">
+          <button type="button" class="btn btn-sm btn-outline-primary nav-btn mr-2 fa-pull-left" (click)="ScreenNaviagte(1)">
+            In Process  <span class="badge badge-dark">{{ count1 }}</span>
+          </button>
+          <button type="button" class="btn btn-outline-danger countButton mr-2" (click)="ScreenNaviagte(2)">
+            On Hold  <span class="badge badge-dark">{{ count2 }}</span>
+          </button>
+          <button type="button" class="btn btn-outline-success countButton fa-pull-right" (click)="ScreenNaviagte(3)">
+            On Boarded   <span class="badge badge-dark">{{ count3 }}</span>
+          </button>
+      </div>
+        <div [ngSwitch]="component">
+            <app-centre-inprocess *ngSwitchCase="'inprocess'"></app-centre-inprocess>
+            <app-centre-onhold *ngSwitchCase="'onHold'"></app-centre-onhold>
+            <app-centre-approved *ngSwitchCase="'approved'"></app-centre-approved>
+        </div>
+    </div>
+  </div>
+    </div>
+  
